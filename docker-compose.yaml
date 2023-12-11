@@ -15,3 +15,23 @@ services:
       - /usr/local/bin/docker:/usr/local/bin/docker
     environment:
       JENKINS_OPTS: ${JENKINS_OPTS:-}
+
+  agent1:
+    container_name: agent1-jenkins
+    image: jenkins/ssh-agent:jdk11
+    privileged: true
+    user: root
+    expose:
+      - 22
+    environment:
+      JENKINS_AGENT_SSH_PUBKEY: ${AGENT1_RSA:-}
+
+  agent2:
+    container_name: agent2-jenkins
+    image: jenkins/ssh-agent:jdk11
+    privileged: true
+    user: root
+    expose:
+      - 22
+    environment:
+      JENKINS_AGENT_SSH_PUBKEY: ${AGENT2_RSA:-}
