@@ -20,6 +20,7 @@ services:
   agent1:
     container_name: agent1-jenkins
     image: villcabo/jenkins-ssh-agent-custom
+    restart: unless-stopped
     privileged: true
     user: root
     expose:
@@ -32,6 +33,7 @@ services:
   agent2:
     container_name: agent2-jenkins
     image: villcabo/jenkins-ssh-agent-custom
+    restart: unless-stopped
     privileged: true
     user: root
     expose:
