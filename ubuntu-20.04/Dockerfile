@@ -3,6 +3,7 @@ FROM ubuntu:20.04
 RUN apt-get update \
     && apt-get install -y openssh-server \
     && apt-get install -y openjdk-11-jdk \
+    && apt-get install -y curl \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -16,8 +17,8 @@ RUN mkdir /home/jenkins \
     && mkdir -p /home/jenkins/.jenkins \
     && chown -R jenkins:jenkins /home/jenkins
 
-# Copia el JAR del agente de Jenkins
-COPY agent.jar /usr/share/jenkins/agent.jar
+# Descarga el JAR del agente de Jenkins
+RUN curl -o /usr/share/jenkins/agent.jar https://url_del_agente/agent.jar
 
 USER jenkins
 ENV AGENT_WORKDIR=${AGENT_WORKDIR}

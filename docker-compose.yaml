@@ -23,6 +23,8 @@ services:
     restart: unless-stopped
     privileged: true
     user: root
+    ports:
+      - ${AGENT1_PORT:-0.0.0.0:40021}:22
     expose:
       - 22
     volumes:
@@ -37,6 +39,8 @@ services:
     restart: unless-stopped
     privileged: true
     user: root
+    ports:
+      - ${AGENT2_PORT:-0.0.0.0:40022}:22
     expose:
       - 22
     volumes:

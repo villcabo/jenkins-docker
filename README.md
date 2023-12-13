@@ -15,6 +15,9 @@ JENKINS_OPTS='--prefix=/your_context'
 ```
 AGENT_IMAGE=jenkins/ssh-agent:jdk11
 AGENT_RSA=<YOUR_RSA>
+
+AGENT1_PORT=0.0.0.0:40021
+AGENT2_PORT=0.0.0.0:40022
 ```
 
 Example format RSA:
