@@ -1,15 +1,5 @@
 # Jenkins with Docker
 
-## Custom Agents
-
-Es necesario customizar los agents, para ellos existe un archivo Dockerfile en este proyecto.
-
-Ejecutar el siguiente comando para crear una imagen
-
-```bash
-docker build -t villcabo/jenkins-ssh-agent-custom .
-```
-
 ## Environment .env
 
 ### Jenkins
