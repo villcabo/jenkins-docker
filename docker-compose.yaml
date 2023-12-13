@@ -26,7 +26,6 @@ services:
     expose:
       - 22
     volumes:
-      - ./jenkins-agent:/home/jenkins/agent
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/bin/docker:/usr/bin/docker
     environment:
@@ -41,7 +40,6 @@ services:
     expose:
       - 22
     volumes:
-      - ./jenkins-agent:/home/jenkins/agent
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/bin/docker:/usr/bin/docker
     environment:
