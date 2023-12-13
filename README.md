@@ -1,19 +1,29 @@
 # Jenkins with Docker
 
+## Custom Agents
+
+Es necesario customizar los agents, para ellos existe un archivo Dockerfile en este proyecto.
+
+Ejecutar el siguiente comando para crear una imagen
+
+```bash
+docker build -t my-custom-jenkins-agent .
+```
+
 ## Environment .env
 
 ### Jenkins
 
 ```
-JENKINS_PORT=8080
+JENKINS_PORT=0.0.0.0:8080
+JENKINS_PORT_CONNECTOR:0.0.0.0:50000
 JENKINS_OPTS='--prefix=/your_context'
 ```
 
 ### Jenkins Agents
 
 ```
-AGENT1_RSA=YOUR_RSA
-AGENT2_RSA=YOUR_RSA
+AGENT_RSA=YOUR_RSA
 ```
 
 Example format RSA:
