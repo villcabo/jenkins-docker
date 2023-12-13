@@ -23,7 +23,8 @@ JENKINS_OPTS='--prefix=/your_context'
 ### Jenkins Agents
 
 ```
-AGENT_RSA=YOUR_RSA
+AGENT_IMAGE=jenkins/ssh-agent:jdk11
+AGENT_RSA=<YOUR_RSA>
 ```
 
 Example format RSA:
