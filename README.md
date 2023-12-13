@@ -7,7 +7,7 @@ Es necesario customizar los agents, para ellos existe un archivo Dockerfile en e
 Ejecutar el siguiente comando para crear una imagen
 
 ```bash
-docker build -t my-custom-jenkins-agent .
+docker build -t villcabo/jenkins-ssh-agent-custom .
 ```
 
 ## Environment .env
