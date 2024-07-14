@@ -13,6 +13,8 @@ JENKINS_OPTS='--prefix=/your_context'
 ### Jenkins Agents
 
 ```
-JENKINS_MASTER_URL=http://your-ip:port
-JENKINS_AGENT_SECRET='Your secret value'
+AGENT_JENKINS_URL=http://your-ip:port
+AGENT_JENKINS_SECRET1='Your secret generated'
 ```
+
+> **Note:** This value *AGENT_JENKINS_SECRET1* is generated after configuring a node permanently in the jenkins administrative panel.

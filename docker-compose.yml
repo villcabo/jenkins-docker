@@ -22,3 +22,4 @@ services:
     container_name: jenkins-agent1
     environment:
       JENKINS_AGENT_NAME: agent1
+      JENKINS_SECRET: ${AGENT_JENKINS_SECRET1}
