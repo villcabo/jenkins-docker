@@ -1,4 +1,5 @@
 name: jenkins-docker
+
 services:
   jenkins:
     container_name: jenkins-master
@@ -21,4 +22,3 @@ services:
     container_name: jenkins-agent1
     environment:
       JENKINS_AGENT_NAME: agent1
-      JENKINS_SECRET: $(cat /run/secrets/jenkins-agent1-secret)

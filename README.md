@@ -14,4 +14,5 @@ JENKINS_OPTS='--prefix=/your_context'
 
 ```
 JENKINS_MASTER_URL=http://your-ip:port
+JENKINS_AGENT_SECRET='Your secret value'
 ```
