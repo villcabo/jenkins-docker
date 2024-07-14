@@ -1,0 +1,24 @@
+name: jenkins-docker
+services:
+  jenkins:
+    container_name: jenkins-master
+    image: jenkins/jenkins:lts
+    restart: unless-stopped
+    privileged: true
+    user: root
+    ports:
+      - ${JENKINS_PORT:-0.0.0.0:8080}:8080
+      - ${JENKINS_PORT_CONNECTOR:-0.0.0.0:50000}:50000
+    volumes:
+      - ./jenkins:/var/jenkins_home
+    environment:
+      JENKINS_OPTS: ${JENKINS_OPTS:-}
+
+  agent1:
+    extends:
+      file: 01-agent.yml
+      service: agent
+    container_name: jenkins-agent1
+    environment:
+      JENKINS_AGENT_NAME: agent1
+      JENKINS_SECRET: $(cat /run/secrets/jenkins-agent1-secret)
