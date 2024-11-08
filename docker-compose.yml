@@ -16,7 +16,7 @@ services:
     privileged: true
     user: root
     networks:
-      - network-app
+      network-app:
     ports:
       - ${JENKINS_PORT:-0.0.0.0:8080}:8080
       - ${JENKINS_PORT_CONNECTOR:-0.0.0.0:50000}:50000
@@ -31,7 +31,7 @@ services:
       service: agent
     container_name: jenkins-agent1
     networks:
-      - network-app
+      network-app:
     environment:
       JENKINS_AGENT_NAME: agent1
       JENKINS_SECRET: ${AGENT_JENKINS_SECRET1}
